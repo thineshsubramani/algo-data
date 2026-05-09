@@ -1,5 +1,22 @@
 package linkedlist
 
+import "github.com/thineshsubramani/algo-data/generator"
+
+// Random generates a linked list of a specified size with random values.
+func Random(size int) *Node {
+	return generator.Generate(size, FromSlice)
+}
+
+// Seq generates a linked list with sequential values from 1 to size.
+func Seq(size int) *Node {
+	return FromSlice(generator.Seq(size))
+}
+
+// SeqReverse generates a linked list with sequential values from size down to 1.
+func SeqReverse(size int) *Node {
+	return FromSlice(generator.SeqReverse(size))
+}
+
 type Node struct {
 	Value int
 	Next  *Node
