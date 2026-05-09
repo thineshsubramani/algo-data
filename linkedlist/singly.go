@@ -1,6 +1,21 @@
 package linkedlist
 
-import "github.com/thineshsubramani/algo-data/generator"
+import (
+	"github.com/thineshsubramani/algo-data/generator"
+	"github.com/thineshsubramani/algo-data/helper"
+)
+
+func init() {
+	helper.Register(helper.ComponentInfo{
+		Name: "linkedlist",
+		Functions: []string{
+			"Random(size int) *Node      // Random values linked list",
+			"Seq(size int) *Node         // Sequential values (1..N)",
+			"SeqReverse(size int) *Node  // Sequential values (N..1)",
+			"FromSlice(nums []int) *Node // Convert slice to linked list",
+		},
+	})
+}
 
 // Random generates a linked list of a specified size with random values.
 func Random(size int) *Node {

@@ -4,7 +4,23 @@ import (
 	"sort"
 
 	"github.com/thineshsubramani/algo-data/generator"
+	"github.com/thineshsubramani/algo-data/helper"
 )
+
+func init() {
+	helper.Register(helper.ComponentInfo{
+		Name: "tree",
+		Functions: []string{
+			"Random(size int, opts ...Option) *Node  // Generates balanced BST with random values",
+			"Seq(size int, opts ...Option) *Node     // Generates balanced BST with sequential values",
+			"FromSlice(nums []int) *Node             // Builds a balanced BST from a slice",
+		},
+		Options: []string{
+			"WithLeftBias()  // Forces tree to grow left (max depth)",
+			"WithRightBias() // Forces tree to grow right (max depth)",
+		},
+	})
+}
 
 // Node represents a node in a binary tree.
 type Node struct {
