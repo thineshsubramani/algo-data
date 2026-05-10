@@ -13,6 +13,7 @@ func init() {
 		Functions: []string{
 			"Random(size int, opts ...Option) *Node  // Generates balanced BST with random values",
 			"Seq(size int, opts ...Option) *Node     // Generates balanced BST with sequential values",
+			"SeqReverse(size int, opts ...Option) *Node // Generates balanced BST with reverse sequential values",
 			"FromSlice(nums []int) *Node             // Builds a balanced BST from a slice",
 		},
 		Options: []string{
@@ -55,6 +56,11 @@ func Random(size int, opts ...Option) *Node {
 // Seq generates a binary tree with sequential values from 1 to size.
 func Seq(size int, opts ...Option) *Node {
 	return buildWithOpts(generator.Seq(size), opts...)
+}
+
+// SeqReverse generates a binary tree with sequential values from size down to 1.
+func SeqReverse(size int, opts ...Option) *Node {
+	return buildWithOpts(generator.SeqReverse(size), opts...)
 }
 
 // FromSlice builds a balanced Binary Search Tree from a slice of integers.

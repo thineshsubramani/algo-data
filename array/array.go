@@ -11,6 +11,7 @@ func init() {
 		Functions: []string{
 			"Random(size int) []int      // Generates a slice with random values",
 			"Seq(size int) []int         // Generates a slice with sequential values (1..N)",
+			"SeqReverse(size int) []int  // Generates a slice with sequential values (N..1)",
 			"FromSlice(nums []int) []int // Identity function returning the slice",
 		},
 	})
@@ -24,6 +25,11 @@ func Random(size int) []int {
 // Seq generates a slice with sequential values from 1 to size.
 func Seq(size int) []int {
 	return generator.Seq(size)
+}
+
+// SeqReverse generates a slice with sequential values from size down to 1.
+func SeqReverse(size int) []int {
+	return generator.SeqReverse(size)
 }
 
 // FromSlice is a convenience function that simply returns the input.

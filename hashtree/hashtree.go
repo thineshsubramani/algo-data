@@ -11,6 +11,7 @@ func init() {
 		Functions: []string{
 			"Random(size int, opts ...Option) map[int]int // Random key-value pairs",
 			"Seq(size int, opts ...Option) map[int]int    // Sequential keys (1..N)",
+			"SeqReverse(size int, opts ...Option) map[int]int // Sequential keys (N..1)",
 			"FromSlice(nums []int) map[int]int            // Slice values become keys",
 		},
 		Options: []string{
@@ -38,6 +39,11 @@ func Random(size int, opts ...Option) map[int]int {
 // Seq generates a map with sequential keys.
 func Seq(size int, opts ...Option) map[int]int {
 	return buildWithOpts(generator.Seq(size), opts...)
+}
+
+// SeqReverse generates a map with reverse sequential keys.
+func SeqReverse(size int, opts ...Option) map[int]int {
+	return buildWithOpts(generator.SeqReverse(size), opts...)
 }
 
 // FromSlice converts a slice into a map where slice values are keys.

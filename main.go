@@ -3,6 +3,8 @@ package main
 import (
 	"fmt"
 	"github.com/thineshsubramani/algo-data/array"
+	"github.com/thineshsubramani/algo-data/doublylinkedlist"
+	"github.com/thineshsubramani/algo-data/graph"
 	"github.com/thineshsubramani/algo-data/hashtree"
 	"github.com/thineshsubramani/algo-data/helper"
 	"github.com/thineshsubramani/algo-data/linkedlist"
@@ -16,6 +18,8 @@ func main() {
 	helper.Describe("linkedlist")
 	helper.Describe("array")
 	helper.Describe("hashtree")
+	helper.Describe("doublylinkedlist")
+	helper.Describe("graph")
 
 	// Directly generate a random linked list
 	head := linkedlist.Random(10)
@@ -44,4 +48,15 @@ func main() {
 
 	hash := hashtree.Random(5, hashtree.WithMultiplier(10))
 	fmt.Printf("HashTree (Map) sample: %v\n", hash)
+
+	// --- Doubly Linked List Tests ---
+	dHead := doublylinkedlist.Seq(5)
+	fmt.Printf("Doubly Start: %v, Next: %v, Next.Prev: %v\n", dHead.Value, dHead.Next.Value, dHead.Next.Prev.Value)
+
+	// --- Graph Tests ---
+	g := graph.Random(5, graph.WithDirected(), graph.WithWeighted(), graph.WithDensity(0.5))
+	fmt.Printf("Graph Nodes: %v\n", g.Nodes)
+	for node, neighbors := range g.Adjacency {
+		fmt.Printf("Node %d has %d neighbors\n", node, len(neighbors))
+	}
 }
