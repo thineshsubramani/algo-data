@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"github.com/thineshsubramani/algo-data/array"
-	"github.com/thineshsubramani/algo-data/doublylinkedlist"
 	"github.com/thineshsubramani/algo-data/graph"
 	"github.com/thineshsubramani/algo-data/hashtree"
 	"github.com/thineshsubramani/algo-data/helper"
@@ -50,7 +49,7 @@ func main() {
 	fmt.Printf("HashTree (Map) sample: %v\n", hash)
 
 	// --- Doubly Linked List Tests ---
-	dHead := doublylinkedlist.Seq(5)
+	dHead := linkedlist.SeqDoubly(5)
 	fmt.Printf("Doubly Start: %v, Next: %v, Next.Prev: %v\n", dHead.Value, dHead.Next.Value, dHead.Next.Prev.Value)
 
 	// --- Graph Tests ---
