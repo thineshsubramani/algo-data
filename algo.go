@@ -1,4 +1,5 @@
-package algodata
+// Package algo provides a simplified facade for generating data structures.
+package algo
 
 import (
 	"github.com/thineshsubramani/algo-data/array"
@@ -10,12 +11,10 @@ import (
 	"github.com/thineshsubramani/algo-data/tree"
 )
 
-// Describe is a shortcut to the helper's Describe function.
-func Describe(name string) {
-	helper.Describe(name)
-}
+// Describe prints help information about a specific component.
+var Describe = helper.Describe
 
-// MaxValue is a pointer to the central generator limit.
+// MaxValue is a reference to the central generator limit.
 var MaxValue = &generator.MaxValue
 
 // Array provides consistent access to slice generation.
