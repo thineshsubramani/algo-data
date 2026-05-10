@@ -53,8 +53,4 @@ func main() {
 	// --- Graph Tests ---
 	g := graph.Random(5, graph.WithDirected(), graph.WithWeighted(), graph.WithDensity(0.5))
 	fmt.Printf("Graph Nodes: %v\n", g.Nodes)
-
-	// --- Stack Tests ---
-	s := stack.Seq(3)
-	fmt.Printf("Stack Top: %d\n", s.Peek())
 }
