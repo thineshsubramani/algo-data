@@ -46,15 +46,15 @@ var LinkedList = struct {
 
 // DoublyLinkedList provides access to doubly linked list generation.
 var DoublyLinkedList = struct {
-	Random     func(int) *doublylinkedlist.Node
-	Seq        func(int) *doublylinkedlist.Node
-	SeqReverse func(int) *doublylinkedlist.Node
-	FromSlice  func([]int) *doublylinkedlist.Node
+	Random     func(int) *linkedlist.DoublyNode
+	Seq        func(int) *linkedlist.DoublyNode
+	SeqReverse func(int) *linkedlist.DoublyNode
+	FromSlice  func([]int) *linkedlist.DoublyNode
 }{
-	Random:     doublylinkedlist.Random,
-	Seq:        doublylinkedlist.Seq,
-	SeqReverse: doublylinkedlist.SeqReverse,
-	FromSlice:  doublylinkedlist.FromSlice,
+	Random:     linkedlist.RandomDoubly,
+	Seq:        linkedlist.SeqDoubly,
+	SeqReverse: linkedlist.SeqReverseDoubly,
+	FromSlice:  linkedlist.FromSliceDoubly,
 }
 
 // Tree provides access to binary tree generation and options.
@@ -106,17 +106,4 @@ var Graph = struct {
 	WithDirected: graph.WithDirected,
 	WithWeighted: graph.WithWeighted,
 	WithDensity:  graph.WithDensity,
-}
-
-// Stack provides access to stack generation.
-var Stack = struct {
-	Random     func(int) *stack.Stack
-	Seq        func(int) *stack.Stack
-	SeqReverse func(int) *stack.Stack
-	FromSlice  func([]int) *stack.Stack
-}{
-	Random:     stack.Random,
-	Seq:        stack.Seq,
-	SeqReverse: stack.SeqReverse,
-	FromSlice:  stack.FromSlice,
 }
