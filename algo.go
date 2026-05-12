@@ -19,28 +19,36 @@ var MaxValue = &generator.MaxValue
 
 // Array provides consistent access to slice generation.
 var Array = struct {
-	Random     func(int) []int
-	Seq        func(int) []int
-	SeqReverse func(int) []int
-	FromSlice  func([]int) []int
+	Random      func(int, ...array.Option) []any
+	Seq         func(int, ...array.Option) []any
+	SeqReverse  func(int, ...array.Option) []any
+	FromSlice   func([]any) []any
+	WithStrings func() array.Option
+	WithBytes   func() array.Option
 }{
-	Random:     array.Random,
-	Seq:        array.Seq,
-	SeqReverse: array.SeqReverse,
-	FromSlice:  array.FromSlice,
+	Random:      array.Random,
+	Seq:         array.Seq,
+	SeqReverse:  array.SeqReverse,
+	FromSlice:   array.FromSlice,
+	WithStrings: array.WithStrings,
+	WithBytes:   array.WithBytes,
 }
 
 // LinkedList provides access to singly linked list generation.
 var LinkedList = struct {
-	Random     func(int) *linkedlist.Node
-	Seq        func(int) *linkedlist.Node
-	SeqReverse func(int) *linkedlist.Node
-	FromSlice  func([]int) *linkedlist.Node
+	Random      func(int, ...linkedlist.Option) *linkedlist.Node
+	Seq         func(int, ...linkedlist.Option) *linkedlist.Node
+	SeqReverse  func(int, ...linkedlist.Option) *linkedlist.Node
+	FromSlice   func([]any) *linkedlist.Node
+	WithStrings func() linkedlist.Option
+	WithBytes   func() linkedlist.Option
 }{
-	Random:     linkedlist.Random,
-	Seq:        linkedlist.Seq,
-	SeqReverse: linkedlist.SeqReverse,
-	FromSlice:  linkedlist.FromSlice,
+	Random:      linkedlist.Random,
+	Seq:         linkedlist.Seq,
+	SeqReverse:  linkedlist.SeqReverse,
+	FromSlice:   linkedlist.FromSlice,
+	WithStrings: linkedlist.WithStrings,
+	WithBytes:   linkedlist.WithBytes,
 }
 
 // DoublyLinkedList provides access to doubly linked list generation.
