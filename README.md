@@ -6,7 +6,10 @@ github.com/thineshsubramani/algo-data
 
 ```
 
-
+### Helper
+```golang
+algodata.Describe("LindkedList")
+```
 
 ### Usage
 ```golang
